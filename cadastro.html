@@ -29,20 +29,25 @@
         h1 {
             margin-bottom: 20px;
         }
-        input[type="text"], input[type="email"], input[type="password"], input[type="tel"], button, select {
-            width: 100%;
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"], select {
+            width: 100%; /* Faz todas as caixas ocuparem 100% da largura do container */
             padding: 15px;
             margin: 10px 0;
             border: none;
             border-radius: 5px;
             font-size: 16px;
+            box-sizing: border-box; /* Garante o ajuste correto do padding */
         }
         button {
             background-color: #28A745; /* Botão verde */
             color: white;
             cursor: pointer;
-            display: block;
-            margin: 20px auto; /* Centraliza o botão */
+            width: 100%; /* Deixa o botão com o mesmo tamanho das caixas de texto */
+            padding: 15px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
         }
         button:hover {
             background-color: #218838;
@@ -63,11 +68,6 @@
             flex-direction: column; /* Organiza os elementos em coluna */
             align-items: center;
         }
-        label {
-            text-align: center; /* Centraliza o texto do rótulo */
-            display: block;
-            margin-bottom: 5px;
-        }
     </style>
 </head>
 <body>
@@ -78,8 +78,7 @@
             <input type="tel" placeholder="Telefone" required>
             <input type="email" placeholder="E-mail" required>
             <input type="text" placeholder="Nome do Pet" required>
-            <label for="tipo-pet">Meu Pet é</label>
-            <select id="tipo-pet" required>
+            <select required>
                 <option value="" disabled selected>Selecione o tipo de Pet</option>
                 <option value="cachorro">Cachorro</option>
                 <option value="gato">Gato</option>
