@@ -63,6 +63,11 @@
             flex-direction: column; /* Organiza os elementos em coluna */
             align-items: center;
         }
+        label {
+            text-align: center; /* Centraliza o texto do rótulo */
+            display: block;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -73,7 +78,8 @@
             <input type="tel" placeholder="Telefone" required>
             <input type="email" placeholder="E-mail" required>
             <input type="text" placeholder="Nome do Pet" required>
-            <select required>
+            <label for="tipo-pet">Meu Pet é</label>
+            <select id="tipo-pet" required>
                 <option value="" disabled selected>Selecione o tipo de Pet</option>
                 <option value="cachorro">Cachorro</option>
                 <option value="gato">Gato</option>
@@ -83,7 +89,7 @@
             <input type="text" placeholder="Nome de usuário" required>
             <input type="password" placeholder="Senha" required>
             <input type="password" placeholder="Repita a senha" required>
-            <button type="submit">Cadastrar</button> <!-- Botão centralizado -->
+            <button type="submit">Cadastrar</button>
         </form>
         <div class="links">
             <a href="login.html">Voltar para Login</a> <!-- Link para redirecionar à página de login -->
