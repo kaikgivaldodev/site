@@ -6,7 +6,10 @@
     <title>PetShop do Tião</title>
     <style>
         body {
-            background-color: #007BFF; /* Fundo azul */
+            background-image: url('https://github.com/kaikgivaldodev/site/blob/main/backgroung.jpg'); /* Novo fundo */
+            background-size: cover; /* Ajusta o tamanho do fundo */
+            background-repeat: no-repeat; /* Evita repetição */
+            background-position: center; /* Centraliza o fundo */
             color: white;
             font-family: Arial, sans-serif;
             display: flex;
@@ -14,8 +17,6 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            position: relative;
-            overflow: hidden; /* Impede a aparição de barras de rolagem */
         }
         .login-container {
             background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
@@ -54,21 +55,9 @@
         .links a:hover {
             text-decoration: underline;
         }
-        .paw-print {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-image: url('https://raw.githubusercontent.com/kaikgivaldodev/site/main/pata.png'); /* Imagem de pata do GitHub */
-            background-size: cover;
-            opacity: 0.5; /* Opacidade leve para o fundo */
-        }
     </style>
 </head>
 <body>
-    <div class="paw-print" style="top: 10%; left: 5%;"></div>
-    <div class="paw-print" style="top: 40%; right: 5%;"></div>
-    <div class="paw-print" style="bottom: 10%; left: 30%;"></div>
-    
     <div class="login-container">
         <h1>PetShop do Tião</h1>
         <form>
