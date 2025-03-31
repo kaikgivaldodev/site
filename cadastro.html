@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - PetShop do Tião</title>
+    <style>
+        body {
+            background-image: url('https://raw.githubusercontent.com/kaikgivaldodev/site/main/fundo.jpg'); /* Fundo igual ao da página principal */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .cadastro-container {
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra */
+            width: 400px; /* Largura fixa */
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="email"], input[type="password"], button {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28A745; /* Botão verde */
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .links {
+            margin-top: 10px;
+        }
+        .links a {
+            color: white;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="cadastro-container">
+        <h1>Cadastrar-se</h1>
+        <form>
+            <input type="text" placeholder="Nome completo" required>
+            <input type="email" placeholder="E-mail" required>
+            <input type="password" placeholder="Senha" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div class="links">
+            <a href="index.html">Voltar para Login</a> <!-- Link para voltar à página principal -->
+        </div>
+    </div>
+</body>
+</html>
