@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Efetuado</title>
+    <style>
+        body {
+            background-image: url('https://raw.githubusercontent.com/kaikgivaldodev/site/main/fundo-cadastro.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .mensagem-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 400px;
+        }
+        h1, p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mensagem-container">
+        <h1>Cadastro efetuado!</h1>
+        <p>Agora faça seu login e aproveite de tudo que há de melhor para seu Pet.</p>
+        <p id="mensagemPet"></p>
+    </div>
+
+    <script>
+        // Captura os parâmetros da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const genero = urlParams.get('genero');
+        const nomePet = urlParams.get('nomePet');
+
+        // Define a mensagem personalizada
+        const mensagemPet = document.getElementById('mensagemPet');
+        if (genero === 'macho') {
+            mensagemPet.textContent = `Vamos cuidar com muito carinho do ${nomePet}!`;
+        } else if (genero === 'femea') {
+            mensagemPet.textContent = `Vamos cuidar com muito carinho da ${nomePet}!`;
+        }
+    </script>
+</body>
+</html>
