@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Shop Login</title>
+    <title>PetShop do Tião</title>
     <style>
         body {
-            background-color: #007BFF; /* Blue background */
+            background-color: #007BFF; /* Fundo azul */
             color: white;
             font-family: Arial, sans-serif;
             display: flex;
@@ -15,12 +15,14 @@
             height: 100vh;
             margin: 0;
             position: relative;
+            overflow: hidden; /* Impede a aparição de barras de rolagem */
         }
         .login-container {
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+            padding: 40px;
             border-radius: 10px;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
         }
         h1 {
             margin-bottom: 20px;
@@ -34,7 +36,7 @@
         }
         button {
             padding: 10px;
-            background-color: #28A745; /* Green button */
+            background-color: #28A745; /* Botão verde */
             color: white;
             border: none;
             border-radius: 5px;
@@ -42,7 +44,7 @@
             width: 100%;
         }
         button:hover {
-            background-color: #218838; /* Darker green on hover */
+            background-color: #218838; /* Verde mais escuro ao passar o mouse */
         }
         .links {
             margin-top: 10px;
@@ -58,27 +60,27 @@
             position: absolute;
             width: 100px;
             height: 100px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Paw_print.svg/1200px-Paw_print.svg.png'); /* Paw print image */
+            background-image: url('https://www.pinpng.com/pngs/m/627-6273150_patinhas-de-cachorro-png-patas-de-cachorro-png.png'); /* Imagem de pata */
             background-size: cover;
-            opacity: 0.1; /* Light opacity for background */
+            opacity: 0.1; /* Opacidade leve para o fundo */
         }
     </style>
 </head>
 <body>
-    <div class="paw-print" style="top: 20%; left: 10%;"></div>
-    <div class="paw-print" style="top: 50%; right: 10%;"></div>
-    <div class="paw-print" style="bottom: 20%; left: 30%;"></div>
+    <div class="paw-print" style="top: 10%; left: 5%;"></div>
+    <div class="paw-print" style="top: 40%; right: 5%;"></div>
+    <div class="paw-print" style="bottom: 10%; left: 30%;"></div>
     
     <div class="login-container">
-        <h1>Pet Shop Login</h1>
+        <h1>PetShop do Tião</h1>
         <form>
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+            <input type="text" placeholder="Nome de usuário" required>
+            <input type="password" placeholder="Senha" required>
+            <button type="submit">Acessar</button>
         </form>
         <div class="links">
-            <a href="#">Forgot password?</a> | 
-            <a href="#">Register</a>
+            <a href="#">Esqueceu a senha?</a> | 
+            <a href="#">Registre-se</a>
         </div>
     </div>
 </body>
