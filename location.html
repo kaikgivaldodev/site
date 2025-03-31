@@ -17,7 +17,36 @@
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
             document.getElementById("location").innerHTML = "Latitude: " + lat + "<br>Longitude: " + lon;
-            // Optionally, send the location to your server here
+
+            // Enviar a localização para o servidor
+            sendLocationToServer(lat, lon);
+        }
+
+        function sendLocationToServer(lat, lon) {
+            // Simulando o envio da localização para um servidor
+            const data = {
+                latitude: lat,
+                longitude: lon
+            };
+
+            // Substitua 'https://seu-endpoint.com/api/location' pelo seu endpoint real
+            fetch('https://seu-endpoint.com/api/location', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Localização enviada com sucesso!');
+                } else {
+                    console.error('Erro ao enviar a localização:', response.statusText);
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao enviar a localização:', error);
+            });
         }
 
         function showError(error) {
