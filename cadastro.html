@@ -52,6 +52,14 @@
         button:hover {
             background-color: #218838;
         }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            text-align: left;
+            display: none; /* Oculta inicialmente */
+        }
         .links {
             margin-top: 10px;
             text-align: center; /* Centraliza o link */
@@ -102,5 +110,61 @@
             <a href="login.html">Voltar para Login</a>
         </div>
     </div>
+
+    <script>
+        const form = document.getElementById('cadastroForm');
+        const nomeUsuario = document.getElementById('nomeUsuario');
+        const senha = document.getElementById('senha');
+        const repitaSenha = document.getElementById('repitaSenha');
+        const erroUsuario = document.getElementById('erroUsuario');
+        const erroSenha = document.getElementById('erroSenha');
+        const erroMaximoSenha = document.getElementById('erroMaximoSenha');
+
+        form.addEventListener('submit', function (e) {
+            let valido = true;
+
+            // Validação do Nome de Usuário
+            if (nomeUsuario.value.includes(' ')) {
+                erroUsuario.style.display = 'block';
+                valido = false;
+            } else {
+                erroUsuario.style.display = 'none';
+            }
+
+            // Validação de Senha
+            if (senha.value !== repitaSenha.value) {
+                erroSenha.style.display = 'block';
+                valido = false;
+            } else {
+                erroSenha.style.display = 'none';
+            }
+
+            // Validação do Tamanho da Senha
+            if (senha.value.length > 8) {
+                erroMaximoSenha.style.display = 'block';
+                valido = false;
+            } else {
+                erroMaximoSenha.style.display = 'none';
+            }
+
+            if (!valido) {
+                e.preventDefault(); // Impede o envio do formulário se houver erros
+            }
+        });
+
+        // Ocultar erros ao começar a digitar
+        nomeUsuario.addEventListener('input', () => {
+            erroUsuario.style.display = 'none';
+        });
+
+        senha.addEventListener('input', () => {
+            erroSenha.style.display = 'none';
+            erroMaximoSenha.style.display = 'none';
+        });
+
+        repitaSenha.addEventListener('input', () => {
+            erroSenha.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
