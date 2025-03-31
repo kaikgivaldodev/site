@@ -29,7 +29,7 @@
         h1 {
             margin-bottom: 20px;
         }
-        input[type="text"], input[type="email"], input[type="password"], button {
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"], button, select {
             width: 100%;
             padding: 15px;
             margin: 10px 0;
@@ -41,6 +41,8 @@
             background-color: #28A745; /* Botão verde */
             color: white;
             cursor: pointer;
+            display: block; /* Garante que o botão seja tratado como um bloco */
+            margin: 20px auto; /* Centraliza horizontalmente */
         }
         button:hover {
             background-color: #218838;
@@ -55,6 +57,11 @@
         .links a:hover {
             text-decoration: underline;
         }
+        form {
+            display: flex;
+            flex-direction: column; /* Organiza os elementos em coluna */
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -62,12 +69,23 @@
         <h1>Cadastrar-se</h1>
         <form>
             <input type="text" placeholder="Nome completo" required>
+            <input type="tel" placeholder="Telefone" required>
             <input type="email" placeholder="E-mail" required>
+            <input type="text" placeholder="Nome do Pet" required>
+            <select required>
+                <option value="" disabled selected>Selecione o tipo de Pet</option>
+                <option value="cachorro">Cachorro</option>
+                <option value="gato">Gato</option>
+                <option value="passaro">Pássaro</option>
+            </select>
+            <input type="text" placeholder="Raça do Pet" required>
+            <input type="text" placeholder="Nome de usuário" required>
             <input type="password" placeholder="Senha" required>
-            <button type="submit">Cadastrar</button>
+            <input type="password" placeholder="Repita a senha" required>
+            <button type="submit">Cadastrar</button> <!-- Botão centralizado -->
         </form>
         <div class="links">
-            <a href="index.html">Voltar para Login</a> <!-- Link para voltar à página principal -->
+            <a href="index.html">Voltar para Login</a>
         </div>
     </div>
 </body>
