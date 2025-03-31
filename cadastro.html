@@ -7,9 +7,9 @@
     <style>
         body {
             background-image: url('https://raw.githubusercontent.com/kaikgivaldodev/site/main/fundo-cadastro.jpg'); /* Novo fundo */
-            background-size: cover; /* Ajusta o tamanho do fundo */
-            background-repeat: no-repeat; /* Evita repetição */
-            background-position: center; /* Centraliza o fundo */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             color: white;
             font-family: Arial, sans-serif;
             display: flex;
@@ -30,7 +30,7 @@
             margin-bottom: 20px;
         }
         input[type="text"], input[type="email"], input[type="password"], input[type="tel"], select {
-            width: 100%; /* Faz todas as caixas ocuparem 100% da largura do container */
+            width: 100%;
             padding: 15px;
             margin: 10px 0;
             border: none;
@@ -51,6 +51,14 @@
         }
         button:hover {
             background-color: #218838;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            text-align: left;
+            display: none; /* Oculta inicialmente */
         }
         .links {
             margin-top: 10px;
@@ -73,26 +81,71 @@
 <body>
     <div class="cadastro-container">
         <h1>Cadastrar-se</h1>
-        <form>
-            <input type="text" placeholder="Nome completo" required>
-            <input type="tel" placeholder="Telefone" required>
-            <input type="email" placeholder="E-mail" required>
-            <input type="text" placeholder="Nome do Pet" required>
-            <select required>
+        <form id="cadastroForm">
+            <input type="text" id="nomeCompleto" placeholder="Nome completo" required>
+            <input type="tel" id="telefone" placeholder="Telefone" required>
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="text" id="nomePet" placeholder="Nome do Pet" required>
+            <select id="tipoPet" required>
                 <option value="" disabled selected>Selecione o tipo de Pet</option>
                 <option value="cachorro">Cachorro</option>
                 <option value="gato">Gato</option>
                 <option value="passaro">Pássaro</option>
             </select>
-            <input type="text" placeholder="Raça do Pet" required>
-            <input type="text" placeholder="Nome de usuário" required>
-            <input type="password" placeholder="Senha" required>
-            <input type="password" placeholder="Repita a senha" required>
+            <input type="text" id="racaPet" placeholder="Raça do Pet" required>
+            <input type="text" id="nomeUsuario" placeholder="Nome de usuário" required>
+            <p id="erroUsuario" class="error-message">O nome de usuário não pode conter espaços.</p>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <input type="password" id="repitaSenha" placeholder="Repita a senha" required>
+            <p id="erroSenha" class="error-message">Escolha a mesma senha.</p>
+            <p id="erroMaximoSenha" class="error-message">A senha deve ter no máximo 8 caracteres.</p>
             <button type="submit">Cadastrar</button>
         </form>
         <div class="links">
-            <a href="login.html">Voltar para Login</a> <!-- Link para redirecionar à página de login -->
+            <a href="login.html">Voltar para Login</a>
         </div>
     </div>
+
+    <script>
+        const form = document.getElementById('cadastroForm');
+        const nomeUsuario = document.getElementById('nomeUsuario');
+        const senha = document.getElementById('senha');
+        const repitaSenha = document.getElementById('repitaSenha');
+        const erroUsuario = document.getElementById('erroUsuario');
+        const erroSenha = document.getElementById('erroSenha');
+        const erroMaximoSenha = document.getElementById('erroMaximoSenha');
+
+        form.addEventListener('submit', function (e) {
+            let valido = true;
+
+            // Validação do Nome de Usuário
+            if (nomeUsuario.value.includes(' ')) {
+                erroUsuario.style.display = 'block';
+                valido = false;
+            } else {
+                erroUsuario.style.display = 'none';
+            }
+
+            // Validação de Senha
+            if (senha.value !== repitaSenha.value) {
+                erroSenha.style.display = 'block';
+                valido = false;
+            } else {
+                erroSenha.style.display = 'none';
+            }
+
+            // Validação do Tamanho da Senha
+            if (senha.value.length > 8) {
+                erroMaximoSenha.style.display = 'block';
+                valido = false;
+            } else {
+                erroMaximoSenha.style.display = 'none';
+            }
+
+            if (!valido) {
+                e.preventDefault(); // Impede o envio do formulário se houver erros
+            }
+        });
+    </script>
 </body>
 </html>
