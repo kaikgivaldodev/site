@@ -6,7 +6,7 @@
     <title>PetShop do Tião</title>
     <style>
         body {
-            background-image: url('https://github.com/kaikgivaldodev/site/blob/main/fundo.jpg'); /* Novo fundo */
+            background-image: url('https://raw.githubusercontent.com/kaikgivaldodev/site/main/fundo.jpg'); /* URL direta para imagem */
             background-size: cover; /* Ajusta o tamanho do fundo */
             background-repeat: no-repeat; /* Evita repetição */
             background-position: center; /* Centraliza o fundo */
@@ -31,11 +31,11 @@
         }
         input[type="text"], input[type="password"], button {
             width: 100%;
-            padding: 15px; /* Aumentando o padding para uniformidade */
+            padding: 15px; /* Ajusta o padding */
             margin: 10px 0;
             border: none;
             border-radius: 5px;
-            font-size: 16px; /* Tamanho da fonte consistente */
+            font-size: 16px; /* Uniformiza o tamanho da fonte */
         }
         button {
             background-color: #28A745; /* Botão verde */
@@ -54,6 +54,11 @@
         }
         .links a:hover {
             text-decoration: underline;
+        }
+        form {
+            display: flex;
+            flex-direction: column; /* Organiza os elementos em coluna */
+            align-items: center; /* Centraliza botão e campos */
         }
     </style>
 </head>
